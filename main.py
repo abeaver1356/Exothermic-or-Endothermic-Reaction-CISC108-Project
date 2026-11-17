@@ -2,6 +2,17 @@
 from dataclasses import dataclass
 from drafter import *
 
+set_website_title("Exothermic or Endothermic")
+set_site_information(
+    author="Alex Beaver",
+    description= "Helps students determine whether their reaction was exo or endothermic.",
+    sources= "Thanks to the Drafter docs",
+    planning=["Alex Beaver Plan.pdf, Alex Beaver Design.pdf"],
+    links= ["https://github.com/abeaver1356/Exothermic-or-Endothermic-Reaction-CISC108-Project"]
+    )
+hide_debug_information()
+
+
 @dataclass
 class Multi_Choice_Question:
     prompt: str
@@ -91,5 +102,6 @@ def restart(state: State) -> Page:
     state.answers = []
     return index(state)
 
-start_server(State(QUESTIONS, TEXT_QUESTIONS, 0, []))
 
+
+start_server(State(QUESTIONS, TEXT_QUESTIONS, 0, []))
